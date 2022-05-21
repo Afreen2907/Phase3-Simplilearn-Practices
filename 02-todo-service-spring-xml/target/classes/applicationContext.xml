@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean name="todoRepository"
+		class="com.simplilearn.workshop.repository.TodoRepositoryImpl"/>
+
+	
+
+	<bean name="todoService"
+		class="com.simplilearn.workshop.service.TodoServiceImpl" autowire="constructor">
+		<!-- depends on 'TodoRepository' -->
+		<!-- <property name="todoRepository" ref="todoRepository"></property> --><!-- setter method(setter dependency) need to be called in the class --> 
+		<!--<constructor-arg name="todoRepository" ref="todoRepository"></constructor-arg> --> <!-- This is dependency injection -->
+	</bean>
+
+</beans>
